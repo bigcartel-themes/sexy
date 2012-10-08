@@ -1,5 +1,9 @@
 {
   "name": "Sexy",
+  "javascripts": [
+    "fancyzoom",
+    "store"
+  ],
   "images": [
     {
       "variable": "image",
