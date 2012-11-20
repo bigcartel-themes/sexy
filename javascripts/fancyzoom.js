@@ -82,7 +82,7 @@ function prepZooms() {
 	var links = document.getElementsByTagName("a");
 	for (i = 0; i < links.length; i++) {
 		if (links[i].getAttribute("href")) {
-			if (links[i].getAttribute("href").search(/(.*)\.(jpg|jpeg|gif|png|bmp|tif|tiff)/gi) != -1) {
+			if (links[i].getAttribute("href").split('?')[0].search(/(.*)\.(jpg|jpeg|gif|png|bmp|tif|tiff)/gi) != -1) {
 				if (links[i].getAttribute("rel") != "nozoom") {
 					links[i].onclick = function (event) { return zoomClick(this, event); };
 					links[i].onmouseover = function () { zoomPreload(this); };
