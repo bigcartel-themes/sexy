@@ -1266,7 +1266,7 @@ body.custom #main-content dd {
 
 /* Font */
 *
-{font-family: {{ theme.font | font_family_for_group }};}
+{font-family: {{ theme.font | font_family }};}
 
 
 /* Background */
