@@ -1,0 +1,36 @@
+<div id="contact-content">
+
+{% if contact.sent %}
+
+  <p id="contact-sent">Your message has been sent and we will respond as soon as possible.</p>
+
+{% else %}
+
+  <p>Submit the form below and we will get back to you as soon as possible.</p>
+
+  <form id="contact-form" method="post" action="/contact">
+
+    <label for="name"><span>Name</span></label>
+    {{ contact | contact_input: 'name' }}
+
+    <label for="email"><span>Email</span></label>
+    {{ contact | contact_input: 'email' }}
+
+    <label for="subject"><span>Subject</span></label>
+    {{ contact | contact_input: 'subject' }}
+
+    <label for="message"><span>Message</span></label>
+    {{ contact | contact_input: 'message' }}
+
+    <div id="captcha-div">{{ contact.captcha }}</div>
+    <label for="captcha">Spam check</label>
+    {{ contact | contact_input: 'captcha' }}
+    <p>Enter the characters from the image above.</p>
+
+    <button id="contact-submit" name="submit" type="submit"><span>Send</span></button>
+
+  </form>
+
+{% endif %}
+
+</div>

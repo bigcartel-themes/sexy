@@ -1,0 +1,22 @@
+{% get products from products.all limit:theme.featured_products order:theme.featured_order %}
+
+{% if products != blank %}
+
+<div id="products">
+  {% for product in products %}
+  <div id="product-{{ forloop.index }}" class="{{ product.css_class }}">
+    <a href="{{ product.url }}" title="View {{ product.name | escape }}" class="product-a">
+      <img class="product-img" src="{{ product.image | product_image_url size:"medium" }}" alt="Image of {{ product.name | escape }}" /><span class="stilt"></span>
+      <div class="product-info"><h3 class="product-title"><span>{{ product.name }}</span></h3><p class="product-price"><span>{{ product.default_price | money_with_sign }}</span></p>{% if product.on_sale %}<p class="product-status"><span>On Sale</span></p>{% endif %}</div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+{% else %}
+
+<p class="alert-noproducts"><span>No products found.</span></p>
+
+{% endif %}
+
+{% endget %}

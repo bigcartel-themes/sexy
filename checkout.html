@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>{{ store.name }} &mdash; One moment...</title>
+  <style type="text/css">
+
+    body {
+      margin: 100px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #666;
+      }
+
+    h3 {
+      padding: 50px;
+      border: solid 1px #ddd;
+      background-color: #f8f8f8;
+      width: 300px;
+      font-size: 18px;
+      }
+
+  </style>
+  <script type="text/javascript" charset="utf-8">
+    function checkout() {
+      if(top != self) {
+        top.location.replace(self.location.href);
+        } else {
+        document.checkout_form.submit();
+      }
+    }
+  </script>
+  {{ head_content}}
+</head>
+<body onload="checkout();">
+
+  <div align="center" style="margin:20px;">
+    <h3>One moment...</h3>
+  </div>
+
+  {% checkoutform %}
+
+    <noscript>
+      <input type="submit" value="Checkout" />
+    </noscript>
+
+  {% endcheckoutform %}
+
+</body>
+</html>

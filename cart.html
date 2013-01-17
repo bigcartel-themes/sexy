@@ -1,0 +1,79 @@
+{% if cart.items != blank %}
+
+<div id="cart-content">
+  <form id="cart-form" method="post" action="/cart">
+    <table id="cart-table">
+      <colgroup>
+        <col id="col-item" />
+        <col id="col-price" />
+        <col id="col-qty" />
+        <col id="col-total" />
+        <col id="col-options" />
+      </colgroup>
+      <thead id="cart-head">
+        <tr>
+          <th id="head-item" scope="col"><span>Item</span></th>
+          <th id="head-price" scope="col"><span>Price</span></th>
+          <th id="head-qty" scope="col"><span>Qty</span></th>
+          <th id="head-total" scope="col"><span>Total</span></th>
+          <th id="head-options" scope="col"><span>Options</span></th>
+        </tr>
+      </thead>
+      <tbody id="cart-body">
+        {% for item in cart.items %}
+        <tr id="item-{{ item.id }}" class="{% cycle 'row', 'row-alt' %}">
+          <th scope="row"><a href="{{ item.product.url }}"><span>{{ item.name }}</span></a></th>
+          <td class="item-price"><span>{{ item.unit_price | money_with_sign }}</span></td>
+          <td class="item-qty">{{ item | item_quantity_input }}</td>
+          <td class="item-total"><span>{{ item.price | money_with_sign }}</span></td>
+          <td class="item-options"><a href="#" onclick="Store.removeItem({{ item.id }}); return false" class="remove-btn" title="Remove item"><span>Remove</span></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div id="cart-footer">
+      <div class="cart-update">
+        <button id="update-btn-footer" class="update-btn" name="update" type="submit" title="Update your cart total"><span>Update your cart total</span></button>
+      </div>
+
+      {% if cart.shipping.strict %}
+      <div class="cart-shipping">
+        <label for="country"><span>Shipping to:</span></label> {{ store.country | country_select }}
+      </div>
+      {% endif %}
+
+      {% if cart.discount.enabled %}
+      <div class="cart-discount">
+        {% if cart.discount.pending %}
+        <label>Discount code (optional): {{ cart.discount | discount_code_input }}</label>
+        {% elsif cart.discount.free_shipping %}
+        <p><span class="discount">{{ cart.discount.name }}</span></p>
+        {% else %}
+        <p><span class="discount">{{ cart.discount.name }}: </span><span class="total-discount">-{{ cart.discount.amount | money_with_sign }}</span></p>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <div class="cart-total">
+      {% if cart.shipping.enabled %}
+        <div id="cart-shipping-tax">
+          {% unless cart.shipping.pending %}<p class="shipping-amount"><span class="shipping">Shipping: </span><span class="total-shipping">{{ cart.shipping.amount | money_with_sign }}</span></p>{% endunless %}
+        </div>
+        <h3><span class="total">Total: </span><span class="total-price">{{ cart.total | money_with_sign }}</span></h3>
+      {% else %}
+        <h3><span class="total">Total: </span><span class="total-price">{{ cart.total | money_with_sign }}</span></h3>
+        <p><span>+ applicable shipping</span></p>
+      {% endif %}
+      </div>
+      <div class="cart-options">
+        <button class="checkout-btn" type="submit" title="Checkout" onclick="Store.checkout(); return false"><span>Checkout</span></button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% else %}
+
+<p class="alert-noitems"><span>You don&#8217;t have any items in your cart. <a href="/">Start shopping &raquo;</a></span></p>
+
+{% endif %}

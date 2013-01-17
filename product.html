@@ -1,0 +1,89 @@
+<div id="product-content">
+
+
+  <div id="product-images">
+    <a id="product-image"{% if product.image_count > 0 %} href="{{ product.image | product_image_url }}"{% endif %}><img id="product-img" src="{{ product.image | product_image_url size:"large" }}" alt="Image of {{ product.name | escape }}" /><span class="stilt"></span>{% if product.image_count > 0 %}<span class="icon_zoom"></span>{% endif %}</a>
+    {% if product.image_count > 1 %}
+    <div class="images-nav">
+      <ul class="images-list" id="images-list">
+        {% for image in product.images %}<li class="image-{{ forloop.index }}"><a href="{{ image | product_image_url size:"large" }}" title="View image {{ forloop.index }}"><span>{{ forloop.index }}</span></a></li>{% endfor %}
+      </ul>
+      <div class="images-prev"><a href="#" onclick="Store.prevImage(); return false;" title="View previous image"><span>Previous</span></a></div>
+      <div class="images-next"><a href="#" onclick="Store.nextImage(); return false;" title="View next image"><span>Next</span></a></div>
+    </div>
+    {% endif %}
+  </div>
+
+
+  <div id="product-details">
+
+    <h3 class="price"><span>{{ product.default_price | money_with_sign }}{% if product.on_sale %} - On Sale{% endif %}</span></h3>
+
+    {% if product.description != blank %}
+    <div class="info">
+      {{ product.description | paragraphs }}
+    </div>
+    {% endif %}
+
+  {% case product.status %}
+
+  {% when 'active' %}
+
+    {% if theme.show_inventory_bars %}
+    <div id="inventory">
+      <h3>Availability</h3>
+      <ul>
+        {% for option in product.options %}<li{% if option.sold_out %} class="sold-out"{% endif %}>
+          <div class="bar" style="width:{{ option.inventory }}%">
+            {% unless product.has_default_option %}<span>{{ option.name }}<em> - {{ option.inventory }}% in stock</em></span>{% endunless %}
+          </div>
+          {% if option.sold_out %}<span class="sold">Sold Out</span>{% endif %}
+        </li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <form id="product-form" method="post" action="/cart">
+
+      {% if product.has_default_option %}
+
+      {{ product.option | hidden_option_input }}
+
+      {% else %}
+
+      <div id="product-options" class="options">
+        {{ product.options_in_stock | options_select }}
+      </div>
+
+      {% endif %}
+
+      <button id="product-addtocart" name="submit" type="submit"><span>Add to cart</span></button>
+
+    </form>
+
+  {% when 'sold-out' %}
+
+    <div class="sold">
+      <h4><span>Sold Out</span></h4>
+    </div>
+
+  {% when 'coming-soon' %}
+
+    <div class="soon">
+      <h4><span>Coming Soon</span></h4>
+    </div>
+
+  {% endcase %}
+
+  </div>
+
+</div>
+
+<script src="{{ 'fancyzoom' | theme_js_url }}" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+
+  {% for image in product.images %}
+  Store.fullSizeImages.push('{{ image | product_image_url }}');
+  {% endfor %}
+
+</script>

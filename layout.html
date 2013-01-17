@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>{{ store.name }} &mdash; {{ page.name }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en-us" />
+  <meta name="description" content="{{ page.meta_description }}" />
+  <meta name="keywords" content="{{ page.meta_keywords }}" />
+  <link href="/products.rss" rel="alternate" title="Product RSS Feed" type="application/rss+xml" />
+  <link href="{{ theme | theme_css_url }}" media="screen" rel="Stylesheet" type="text/css" />
+  <script src="{{ 'prototype' | theme_js_url }}" type="text/javascript"></script>
+  <script src="{{ 'store' | theme_js_url }}" type="text/javascript"></script>
+  {{ head_content }}
+</head>
+
+<body id="{{ page.permalink }}-page" class="{{ page.permalink }} {{ page.category }}">
+
+  <div id="wrap">
+
+    <noscript>
+      <div class="error" id="error">
+        <ul>
+          <li>JavaScript must be enabled to use this store!</li>
+        </ul>
+      </div>
+    </noscript>
+
+    {% if errors != blank %}
+    <div id="error" class="error">
+      <ul>
+        {% for error in errors %}<li>{{ error }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if store.website != blank %}
+    <div id="website">
+      <a href="{{ store.website }}">Back to site</a>
+    </div>
+    {% endif %}
+
+    <div id="header"{% if theme.image != blank %} class="image"{% endif %}>
+      <h1><a href="/"><span>{{ store.name }}</span>{% if theme.image != blank %}<img src="{{ theme.image.url }}" />{% endif %}</a></h1>
+    </div>
+
+    <div id="main">
+
+      <div id="main-title">
+        <h2><span>{{ page.name }}</span></h2>
+      </div>
+
+      <div id="main-content">
+        {% if page.category == 'custom' %}
+        {{ page_content | paragraphs }}
+        {% else %}
+        {{ page_content }}
+        {% endif %}
+      </div>
+
+    </div>
+
+    <div id="navigation">
+
+      <div id="minicart">
+        <h3 class="minicart-title"><span>Cart</span></h3>
+        <ul class="minicart-contents">
+          <li class="minicart-items"><span id="cart-count">{{ cart.item_count | pluralize: 'item', 'items' }}</span></li>
+          <li class="minicart-total"><span id="cart-total">{{ cart.total | money_with_sign }}</span></li>
+        </ul>
+        <div class="minicart-options">
+          <div class="minicart-view"><a href="/cart" title="View Cart"><span>View Cart</span></a></div>
+          <div class="minicart-checkout"><a href="/checkout" title="Checkout"><span>Checkout</span></a></div>
+        </div>
+      </div>
+
+      {% if theme.show_search %}
+      <div id="search" class="pod">
+        <h3 class="search-title"><span>Search</span></h3>
+        <form id="search-form" name="search" action="/products" method="get">
+          <input id="search-input" name="search" type="text" /><button id="search-submit" name="search-submit" type="submit" title="GO"><span>GO</span></button>
+        </form>
+      </div>
+      {% endif %}
+
+      {% if artists.active != blank %}
+      <div id="artists" class="pod">
+        <h3 class="artists-title"><span>Artists</span></h3>
+        <form id="artists-form" name="artists" action="/" method="get">
+          <select id="artists-select" name="artist" onchange="Store.selectArtist(this)">
+            <option value="">Select an artist...</option>
+            {% for artist in artists.active %}
+            <option value="{{ artist.url }}">{{ artist.name }}</option>
+            {% endfor %}
+          </select>
+        </form>
+      </div>
+      {% endif %}
+
+      <div id="categories" class="pod">
+        <h3 class="categories-title"><span>Categories</span></h3>
+        <ul class="categories-list">
+          <li><a href="/products" title="All"><span>All</span></a></li>{% for category in categories.active %}<li>{{ category | link_to }}</li>{% endfor %}
+        </ul>
+      </div>
+
+      {% if theme.show_newest %}
+      <div id="newest" class="pod">
+        <h3 class="newest-title"><span>Newest Products</span></h3>
+        <ul class="newest-list">
+        {% get 5 products from products.all order:'newest' %}
+          {% for product in products %}<li>{{ product | link_to }}</li>{% endfor %}
+        {% endget %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if theme.show_top_selling %}
+      <div id="top-selling" class="pod">
+        <h3 class="top-selling-title"><span>Top Selling</span></h3>
+        <ul class="top-selling-list">
+        {% get 5 products from products.all order:'sales' %}
+          {% for product in products %}<li>{{ product | link_to }}</li>{% endfor %}
+        {% endget %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if theme.show_products_feed %}
+      <div id="feed" class="pod">
+        <h3 class="feed-title"><span>Feed</span></h3>
+        <ul class="feed-list">
+           <li class="li-1"><a href="/products.rss" title="Product RSS Feed"><span>Product RSS Feed</span></a></li>
+        </ul>
+      </div>
+      {% endif %}
+
+      <div id="help" class="pod">
+        <h3 class="help-title"><span>Info</span></h3>
+        <ul class="help-list">
+          {% for page in pages.all %}<li>{{ page | link_to }}</li>{% endfor %}<li>{{ pages.contact | link_to }}</li>
+        </ul>
+      </div>
+
+      <div id="badge"><a href="http://bigcartel.com" title="Check out Big Cartel"><span>Powered by Big Cartel</span></a></div>
+
+    </div>
+
+    <div id="footer"><span></span></div>
+
+  </div>
+
+
+  <div id="extra-1"><span></span></div>
+  <div id="extra-2"><span></span></div>
+  <div id="extra-3"><span></span></div>
+  <div id="extra-4"><span></span></div>
+  <div id="extra-5"><span></span></div>
+  <div id="extra-6"><span></span></div>
+
+
+</body>
+</html>
