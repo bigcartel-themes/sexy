@@ -162,8 +162,8 @@ var Store = {
 
   checkout: function() {
     var form = $(this.cartFormID);
-        form.insert(new Element('input', { name: 'checkout', value: '1', type: 'hidden' }));
-        form.submit();
+    form.insert('<input type="hidden" name="checkout" value="1" />');
+    form.submit();
   }
 
 };
