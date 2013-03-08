@@ -1,0 +1,13 @@
+/*============================================================
+ Success
+============================================================*/
+
+body.success #main-content h2 {
+  padding: 20px 20px 0 20px;
+  font-size: 17px;
+  }
+
+body.success #main-content p {
+  padding: 0 20px 20px 20px;
+  }
+

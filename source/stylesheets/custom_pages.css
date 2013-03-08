@@ -1,0 +1,65 @@
+/*============================================================
+ Custom Pages
+============================================================*/
+
+#faq-content {
+  padding: 0;
+  }
+
+body.custom #main-content {
+  width: 507px;
+  padding: 20px 25px;
+  }
+
+body.custom #main-content strong {
+  font-weight: bold;
+  }
+
+body.custom #main-content em {
+  font-style: italic;
+  }
+
+body.custom #main-content code,
+body.custom #main-content pre {
+  white-space: pre;
+  }
+
+body.custom #main-content h2,
+body.custom #main-content h3,
+body.custom #main-content h4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  }
+
+body.custom #main-content ul,
+body.custom #main-content ol,
+body.custom #main-content blockquote {
+  padding: 0 50px;
+  }
+
+body.custom #main-content ul li {
+  line-height: 15px;
+  list-style: disc;
+  }
+
+body.custom #main-content ol li {
+  line-height: 15px;
+  list-style: decimal;
+  }
+
+body.custom #main-content blockquote {
+  margin-bottom: 1em;
+  font-style: italic;
+  }
+
+body.custom #main-content dt {
+  margin-bottom: .5em;
+  font-size: 13px;
+  font-weight: bold;
+  }
+
+body.custom #main-content dd {
+  margin-bottom: 2.3em;
+  line-height: 15px;
+  }
+  

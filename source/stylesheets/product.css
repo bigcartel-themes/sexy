@@ -1,0 +1,260 @@
+/*============================================================
+ Product Detail
+============================================================*/
+
+#product-content {
+  float: left;
+  width: 100%;
+  padding-bottom: 25px;
+  }
+
+#product-images {
+  float: left;
+  width: 300px;
+  }
+
+a#product-image span.icon_zoom {
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  background-image: url(/images/icon_zoom.png) !important;
+  background-image: url(/images/icon_zoom.gif);
+  background-repeat: no-repeat;
+  background-position: -20px;
+  z-index: 100;
+  cursor: pointer;
+  overflow: hidden;
+  }
+
+a#product-image:hover span.icon_zoom {
+  background-position: 0;
+  }
+
+#product-images .product-img {
+  margin: 0 0 10px 0;
+  }
+
+#product-images .images-nav {
+  float: left;
+  position: relative;
+  width: 300px;
+  height: 28px;
+  margin: 10px 0 0 0;
+  background: #e4e4e4;
+  }
+
+#product-images .images-list {
+  position: absolute;
+  width: 244px;
+  top: 0;
+  left: 28px;
+  padding: 7px 0 8px 0;
+  text-align: center;
+  }
+
+#product-images .images-list li {
+  display: inline;
+  padding: 0 5px;
+  list-style: none;
+  border-left: 1px solid #666;
+  }
+
+#product-images .images-list li.image-1 {
+  border-left: none;
+  }
+
+#product-images .images-prev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  }
+
+#product-images .images-next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  }
+
+#product-images .images-prev a {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url(/images/btn-prev.gif) no-repeat;
+  }
+
+#product-images .images-next a {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url(/images/btn-next.gif) no-repeat;
+  }
+
+#product-images .images-prev span,
+#product-images .images-next span {
+  display: none;
+  }
+
+#product-details {
+  float: left;
+  width: 215px;
+  margin-left: 15px;
+  }
+
+#product-details ul {
+  margin-left: 17px;
+  }
+
+#product-details ol {
+  margin-left: 23px;
+  }
+
+#product-details li {
+  font-size: 11px;
+  line-height: 15px;
+  list-style: disc;
+  }
+
+#product-details ol li {
+  list-style: decimal;
+  }
+
+#product-details .price {
+  width: 100%;
+  margin-bottom: .7em;
+  padding-bottom: .7em;
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
+  border-bottom: 1px solid #ccc;
+  }
+
+#product-form {
+  clear: both;
+  float: left;
+  width: 100%;
+  }
+
+#product-details .info,
+#product-form .options {
+  width: 100%;
+  padding: .3em 0 .3em 0;
+  border-bottom: 1px solid #ccc;
+  }
+
+#product-form .options select {
+  width: 100%;
+  margin: .8em 0;
+  }
+
+#product-form .options ul {
+  margin: .8em 0;
+  }
+
+#product-form .options li {
+  list-style: none;
+  padding: 1px 5px;
+  }
+
+#product-form .options li input {
+  text-align: left;
+  vertical-align: middle;
+  }
+
+#product-form .options li label {
+  vertical-align: middle;
+  font-weight: bold;
+  }
+
+#product-form .options li.sold label {
+  font-weight: normal;
+  color: #999;
+  }
+
+#product-addtocart {
+  clear: both;
+  display: block;
+  width: 81px;
+  height: 18px;
+  margin-top: 15px;
+  border: none;
+  background: url(/images/btn-addtocart.gif) no-repeat;
+  cursor: pointer;
+  }
+
+#product-addtocart span {
+  display: none;
+  }
+
+#product-details div.sold h4,
+#product-details div.soon h4 {
+  margin-top: .8em;
+  font-size: 18px;
+  font-weight: bold;
+  }
+
+#product-details div.sold h4 {
+  color: #cf3636;
+  }
+
+#inventory {
+  float: left;
+  width: 100%;
+  padding: 10px 0 12px 0;
+  border-bottom: 1px solid #ccc;
+  }
+
+#inventory h3 {
+  font-size: 12px;
+  margin-bottom: 1em;
+  }
+
+#inventory ul {
+  margin: 0;
+  }
+
+#inventory li {
+  float: left;
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 3px;
+  background: #f2f2f2;
+  list-style: none;
+  }
+
+#inventory .bar {
+  display: block;
+  position: relative;
+  height: 14px;
+  background: #dadada;
+  }
+
+#inventory .bar span {
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 150px;
+  height: 12px;
+  font-size: 10px;
+  line-height: 12px;
+  overflow: hidden;
+  }
+
+#inventory .bar span em {
+  display: none;
+  }
+
+#inventory span.sold {
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  font-size: 10px;
+  color: #ccc;
+  line-height: 12px;
+  }
+
