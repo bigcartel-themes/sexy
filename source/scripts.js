@@ -1,1 +1,2 @@
-//= require_directory ./javascripts
+//= require_directory ./javascripts/vendor
+//= require javascripts/store
