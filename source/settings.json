@@ -1,10 +1,6 @@
 {
   "name": "Sexy",
   "version": "1.0.12",
-  "javascripts": [
-    "fancyzoom",
-    "store"
-  ],
   "images": [
     {
       "variable": "image",

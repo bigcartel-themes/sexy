@@ -1,0 +1,454 @@
+/*------------------------------------------------------------
+
+   _______ _______ _     _ __   __
+   |______ |______  \___/    \_/
+   ______| |______ _/   \_    |
+
+  ----------------------------------------------------------
+
+  Theme:   Sexy
+  Author:  Big Cartel
+           http://bigcartel.com
+
+           Big Cartel Stores CSS
+           Copyright 2008 Big Cartel LLC.
+           More info at: http://bigcartel.com
+
+------------------------------------------------------------*/
+
+
+
+/*============================================================
+ Base
+============================================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  }
+
+body {
+  margin: 20px;
+  text-align: center;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 11px;
+  color: #666;
+  background: #cfcfcf;
+  }
+
+ul, ol {
+  margin-bottom: 1em;
+  }
+
+li {
+  list-style: none;
+  }
+
+h2 {
+  margin-bottom: 1em;
+  font-weight: normal;
+  }
+
+h3 {
+  margin-bottom: .5em;
+  font-size: 13px;
+  font-weight: bold;
+  }
+
+p {
+  margin-bottom: 1em;
+  font-size: 11px;
+  color: #666;
+  line-height: 15px;
+  }
+
+a  {
+  text-decoration: none;
+  }
+
+a:link, a:visited {
+  color: #5575DD;
+  }
+
+a:hover, a:active {
+  color: #0E1B79;
+  }
+
+a img  {
+  border: none;
+  }
+
+img {
+  -ms-interpolation-mode: bicubic;
+  }
+
+input,
+textarea {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 11px;
+  color: #666;
+  }
+
+hr {
+  margin-bottom: 10px;
+  height: 1px;
+  color: #ccc;
+  background: #ccc;
+  border: none;
+  }
+
+
+
+/*============================================================
+ Wrapper
+============================================================*/
+
+#wrap {
+  width: 740px;
+  margin: 0 auto;
+  text-align: left;
+  }
+
+
+
+/*============================================================
+ Header
+============================================================*/
+
+#header {
+  margin-bottom: 5px;
+  }
+
+#header.image h1 span {
+  display: none;
+  }
+
+#header h1 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 35px;
+  }
+
+#header h1 span {
+  padding: 30px 0 10px;
+  }
+
+
+/*============================================================
+ Main Content Area
+============================================================*/
+
+#main {
+  float: left;
+  width: 557px;
+  margin: 0 5px 0 0;
+  }
+
+
+/* Title ---------------------------------------------------*/
+
+#main-title {
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+  min-height: 50px;
+  height: auto !important;
+  height: 50px;
+  background: #404040;
+  }
+
+#main-title h2 {
+  margin: 16px 0 13px 13px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #CDE2F0;
+  }
+
+
+/* Content -------------------------------------------------*/
+
+#main-content {
+  float: left;
+  width: 537px;
+  padding: 10px;
+  background: #fff;
+  }
+
+* html #main-content {
+  width: 557px;
+  w\idth: 537px;
+  }
+
+
+
+/*============================================================
+ Navigation
+============================================================*/
+
+#navigation {
+  float: left;
+  width: 178px;
+  }
+
+#navigation div.pod {
+  clear: both;
+  width: 148px;
+  margin-bottom: 5px;
+  padding: 0 15px 12px 15px;
+  font-size: 10px;
+  background: #fff;
+  }
+
+* html #navigation div.pod {
+  width: 178px;
+  w\idth: 148px;
+  }
+
+#navigation div.pod h3 {
+  display: block;
+  width: 160px;
+  margin: 0 -15px 11px -15px;
+  padding: 4px 9px 6px 9px;
+  font-size: 9px;
+  font-weight: normal;
+  color: #CDE2F0;
+  background: #404040;
+  }
+
+* html #navigation div.pod h3 {
+  width: 178px;
+  w\idth: 160px;
+  }
+
+#navigation div.pod ul {
+  margin-bottom: 3px;
+  }
+
+#navigation div.pod li {
+  margin-top: 3px;
+  padding: 3px 0;
+  list-style: none;
+  border-bottom: 1px solid #EFEFEF;
+  }
+
+
+/* MiniCart Contents -------------------------------------------*/
+
+#minicart {
+  float: left;
+  width: 178px;
+  min-height: 50px;
+  height: auto !important;
+    height: 50px;
+  margin-bottom: 5px;
+  background: url(/images/cart-bkg.gif) no-repeat bottom left #fff;
+  }
+
+#minicart h3 {
+  float: left;
+  display: block;
+  width: 160px;
+  margin: 0;
+  padding: 4px 9px 6px 9px;
+  font-size: 9px;
+  font-weight: normal;
+  color: #CDE2F0;
+  background: #404040;
+  }
+
+* html #minicart h3 {
+  width: 178px;
+  w\idth: 160px;
+  }
+
+#minicart .minicart-contents {
+  float: right;
+  display: inline;
+  margin: -18px 7px 0 0;
+  font-size: 9px;
+  color: #CDE2F0;
+  }
+
+#minicart .minicart-contents li {
+  float: left;
+  }
+
+#minicart .minicart-items {
+  margin-right: 5px;
+  }
+
+#minicart .minicart-total {
+  padding-left: 5px;
+  font-weight: bold;
+  border-left: 1px solid #CDE2F0;
+  }
+
+#minicart .minicart-options {
+  float: right;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  }
+
+#minicart .minicart-view {
+  float: left;
+  display: inline;
+  margin-left: 37px;
+  }
+
+#minicart .minicart-view a {
+  display: block;
+  width: 66px;
+  height: 18px;
+  background: url(/images/btn-viewcart.gif) no-repeat;
+  }
+
+#minicart .minicart-view span {
+  display: none;
+  }
+
+#minicart .minicart-checkout {
+  float: right;
+  display: inline;
+  margin-right: 5px;
+  }
+
+#minicart .minicart-checkout a {
+  display: block;
+  width: 66px;
+  height: 18px;
+  background: url(/images/btn-checkout.gif) no-repeat;
+  }
+
+#minicart .minicart-checkout span {
+  display: none;
+  }
+
+
+/* Search --------------------------------------------------*/
+
+#search-input {
+  width: 113px;
+  height: 12px;
+  padding: 1px;
+  font-size: 10px;
+  vertical-align: middle;
+  }
+
+#search-submit {
+  width: 24px;
+  height: 18px;
+  margin-left: 3px;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/btn-go.gif) no-repeat;
+  cursor: pointer;
+  }
+
+#search-submit span {
+  display: none;
+  }
+
+
+/* Artists -------------------------------------------------*/
+
+#artists-select {
+  width: 148px;
+  font-size: 10px;
+  }
+
+
+/* Big Cartel Badge ----------------------------------------*/
+
+#badge {
+  float: left;
+  width: 100%;
+  }
+
+#badge a {
+  float: left;
+  display: block;
+  width: 79px;
+  height: 23px;
+  background: url(/images/badge.png) no-repeat !important;
+  background: url(/images/badge.gif) no-repeat;
+  }
+
+#badge span {
+  display: none;
+  }
+
+
+
+/*============================================================
+ Footer
+============================================================*/
+
+#footer {
+  clear: both;
+  }
+
+
+
+/*============================================================
+ Alerts
+============================================================*/
+
+p.alert-noproducts,
+p.alert-noitems {
+  margin: 20px;
+  }
+
+div#error {
+  display: block;
+  margin-bottom: 5px;
+  border-top: 1px solid #6c1010;
+  border-bottom: 1px solid #6c1010;
+  background: #cf3636;
+  }
+
+div#error h2,
+div#error p {
+  display: none;
+  }
+
+div#error ul {
+  margin: 0;
+  padding: 5px 20px;
+  font-size: 13px;
+  color: #fff;
+  line-height: 25px;
+  }
+
+div#error li {
+  margin: 0;
+  padding: 0 20px;
+  font-weight: bold;
+  background: url(/images/bullet-error.gif) no-repeat 0 7px;
+  }
+
+.form-error {
+  border: 1px solid #cf3636;
+  }
+
+
+
+/*============================================================
+ Site Link
+============================================================*/
+
+#website {
+  position: absolute;
+  top: 0;
+  background: #fff;
+  }
+
+#website a {
+  display: block;
+  padding: 2px 14px 3px 14px;
+  font-size: 10px;
+  line-height: 10px;
+  }

@@ -1,0 +1,20 @@
+/*============================================================
+ FAQ
+============================================================*/
+
+#faq-content {
+  padding: 15px 25px;
+  }
+
+#faq-content .faq-list dt {
+  margin-bottom: .5em;
+  font-size: 13px;
+  font-weight: bold;
+  color: #666;
+  }
+
+#faq-content .faq-list dd {
+  margin-bottom: 2.3em;
+  }
+
+

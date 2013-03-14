@@ -1,0 +1,62 @@
+/*============================================================
+ Contact
+============================================================*/
+
+#contact-content {
+  padding: 15px 25px;
+  }
+
+#contact-form {
+  width: 425px;
+  padding: 15px 0;
+  }
+
+#contact-form label {
+  float: left;
+  width: 85px;
+  padding: 2px 0;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: right;
+  color: #666;
+  }
+
+#contact-form input,
+#contact-form textarea {
+  float: left;
+  width: 250px;
+  margin: 0 25px 8px 10px;
+  vertical-align: bottom;
+  }
+
+#contact-form textarea {
+  width: 300px;
+  height: 150px;
+  }
+
+#contact-form p,
+#captcha-div {
+  float: left;
+  display: inline;
+  width: 330px;
+  margin: 0 -3px 10px 95px; /* -3px fixes ie6 duplicate chars */
+  }
+
+#contact-form p {
+  margin-bottom: 25px;
+  }
+
+#contact-submit {
+  clear: both;
+  display: block;
+  width: 42px;
+  height: 18px;
+  margin: 0 0 0 95px;
+  border: none;
+  background: url(/images/btn-send.gif) no-repeat;
+  cursor: pointer;
+  }
+
+#contact-submit span {
+  display: none;
+  }
