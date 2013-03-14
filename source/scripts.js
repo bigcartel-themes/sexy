@@ -1,2 +1,2 @@
-//= require_directory ./javascripts/vendor
+//= require javascripts/fancyzoom
 //= require javascripts/store
