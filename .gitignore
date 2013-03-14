@@ -1,0 +1,10 @@
+.DS_Store
+
+build
+tmp
+log
+
+*.tmproj
+*.esproj
+*.sublime*
+
