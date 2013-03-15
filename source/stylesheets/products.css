@@ -6,7 +6,7 @@
   float: left;
   display: inline;
   margin: 2px 4px 4px 4px;
-  background: url(/images/bkg-products-col.gif) repeat-y #e4e4e4;
+  background: url({{ 'bkg-products-col.gif' | theme_image_url }}) repeat-y #e4e4e4;
   }
 
 #products div.product {
