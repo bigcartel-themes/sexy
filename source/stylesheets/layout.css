@@ -243,7 +243,7 @@ hr {
   height: auto !important;
     height: 50px;
   margin-bottom: 5px;
-  background: url(/images/cart-bkg.gif) no-repeat bottom left #fff;
+  background: url({{ 'cart-bkg.gif' | theme_image_url }}) no-repeat bottom left #fff;
   }
 
 #minicart h3 {
@@ -303,7 +303,7 @@ hr {
   display: block;
   width: 66px;
   height: 18px;
-  background: url(/images/btn-viewcart.gif) no-repeat;
+  background: url({{ 'btn-viewcart.gif' | theme_image_url }}) no-repeat;
   }
 
 #minicart .minicart-view span {
@@ -320,7 +320,7 @@ hr {
   display: block;
   width: 66px;
   height: 18px;
-  background: url(/images/btn-checkout.gif) no-repeat;
+  background: url({{ 'btn-checkout.gif' | theme_image_url }}) no-repeat;
   }
 
 #minicart .minicart-checkout span {
@@ -344,7 +344,7 @@ hr {
   margin-left: 3px;
   vertical-align: middle;
   border: none;
-  background: url(/images/btn-go.gif) no-repeat;
+  background: url({{ 'btn-go.gif' | theme_image_url }}) no-repeat;
   cursor: pointer;
   }
 
@@ -373,8 +373,8 @@ hr {
   display: block;
   width: 79px;
   height: 23px;
-  background: url(/images/badge.png) no-repeat !important;
-  background: url(/images/badge.gif) no-repeat;
+  background: url({{ 'badge.png' | theme_image_url }}) no-repeat !important;
+  background: url({{ 'badge.gif' | theme_image_url }}) no-repeat;
   }
 
 #badge span {
@@ -427,7 +427,7 @@ div#error li {
   margin: 0;
   padding: 0 20px;
   font-weight: bold;
-  background: url(/images/bullet-error.gif) no-repeat 0 7px;
+  background: url({{ 'bullet-error.gif' | theme_image_url }}) no-repeat 0 7px;
   }
 
 .form-error {
