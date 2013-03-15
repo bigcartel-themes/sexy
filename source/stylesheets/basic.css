@@ -1,0 +1,82 @@
+/*============================================================
+  Basic Styles - used for the simple controls.
+============================================================*/
+
+/* Font */
+*
+{font-family: {{ theme.font | font_family }};}
+
+
+/* Background */
+body {
+  background-color: {{ theme.background }};
+{% if theme.background_image != blank %}
+  background-image: url({{ theme.background_image.url }});
+  background-repeat: repeat;
+{% endif %}
+  }
+
+
+/* Text */
+body,
+p,
+input,
+textarea,
+#product-details .price,
+#faq-content .faq-list dt,
+#contact-form label,
+#cart-footer .cart-total #cart-shipping-tax p
+{color: {{ theme.text }};}
+
+
+/* Links */
+a:link,
+a:visited,
+#products .product-a h3,
+#products .product-a p
+{color: {{ theme.links }};}
+
+
+/* Links rollover */
+a:hover,
+a:active,
+#products .product-a:hover h3,
+#products .product-a:hover p
+{color: {{ theme.links_rollover }};}
+
+
+/* Header background */
+#main-title,
+#navigation div.pod h3,
+#minicart h3,
+#cart-head
+{background-color: {{ theme.header_background }};}
+
+
+/* Header text */
+#main-title h2,
+#navigation div.pod h3,
+#minicart h3,
+#minicart .minicart-contents,
+#cart-head
+{color: {{ theme.header_text }};}
+
+#minicart .minicart-total
+{border-left-color: {{ theme.header_text }};}
+
+
+/* Sidebar links */
+#navigation div.pod a
+{color: {{ theme.sidebar_links }};}
+
+
+/* Sidebar rollovers */
+#navigation div.pod a:hover
+{color: {{ theme.sidebar_rollovers }};}
+
+
+/* Products background */
+#products,
+#products .product-pic,
+#product-images .images-nav
+{background-color: {{ theme.products_background }};}
