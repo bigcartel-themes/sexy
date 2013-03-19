@@ -6,4 +6,4 @@
 
 **This theme is *really* old.** Many of the HTML, CSS, and JavaScript coding conventions are embarrassingly outdated and should be ignored. However, it gives you a good idea of how a theme works.
 
-
+*© 2013 Big Cartel, LLC*
