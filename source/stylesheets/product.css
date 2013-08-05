@@ -20,8 +20,8 @@ a#product-image span.icon_zoom {
   left: 4px;
   width: 20px;
   height: 20px;
-  background-image: url({{ 'icon_zoom.png' | theme_image_url }}) !important;
-  background-image: url({{ 'icon_zoom.gif' | theme_image_url }});
+  background-image: url("{{ 'icon_zoom.png' | theme_image_url }}") !important;
+  background-image: url("{{ 'icon_zoom.gif' | theme_image_url }}");
   background-repeat: no-repeat;
   background-position: -20px;
   z-index: 100;
@@ -84,14 +84,14 @@ a#product-image:hover span.icon_zoom {
   display: block;
   width: 18px;
   height: 18px;
-  background: url({{ 'btn-prev.gif' | theme_image_url }}) no-repeat;
+  background: url("{{ 'btn-prev.gif' | theme_image_url }}") no-repeat;
   }
 
 #product-images .images-next a {
   display: block;
   width: 18px;
   height: 18px;
-  background: url({{ 'btn-next.gif' | theme_image_url }}) no-repeat;
+  background: url("{{ 'btn-next.gif' | theme_image_url }}") no-repeat;
   }
 
 #product-images .images-prev span,
@@ -182,7 +182,7 @@ a#product-image:hover span.icon_zoom {
   height: 18px;
   margin-top: 15px;
   border: none;
-  background: url({{ 'btn-addtocart.gif' | theme_image_url }}) no-repeat;
+  background: url("{{ 'btn-addtocart.gif' | theme_image_url }}") no-repeat;
   cursor: pointer;
   }
 

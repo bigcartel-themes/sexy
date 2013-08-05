@@ -2,11 +2,11 @@
 
 
   <div id="product-images">
-    <a id="product-image"{% if product.image_count > 0 %} href="{{ product.image | product_image_url }}"{% endif %}><img id="product-img" src="{{ product.image | product_image_url size:"large" }}" alt="Image of {{ product.name | escape }}" /><span class="stilt"></span>{% if product.image_count > 0 %}<span class="icon_zoom"></span>{% endif %}</a>
+    <a id="product-image"{% if product.image_count > 0 %} href="{{ product.image | product_image_url }}"{% endif %}><img id="product-img" src="{{ product.image | product_image_url: "large" }}" alt="Image of {{ product.name | escape }}" /><span class="stilt"></span>{% if product.image_count > 0 %}<span class="icon_zoom"></span>{% endif %}</a>
     {% if product.image_count > 1 %}
     <div class="images-nav">
       <ul class="images-list" id="images-list">
-        {% for image in product.images %}<li class="image-{{ forloop.index }}"><a href="{{ image | product_image_url size:"large" }}" title="View image {{ forloop.index }}"><span>{{ forloop.index }}</span></a></li>{% endfor %}
+        {% for image in product.images %}<li class="image-{{ forloop.index }}"><a href="{{ image | product_image_url: "large" }}" title="View image {{ forloop.index }}"><span>{{ forloop.index }}</span></a></li>{% endfor %}
       </ul>
       <div class="images-prev"><a href="#" onclick="Store.prevImage(); return false;" title="View previous image"><span>Previous</span></a></div>
       <div class="images-next"><a href="#" onclick="Store.nextImage(); return false;" title="View next image"><span>Next</span></a></div>

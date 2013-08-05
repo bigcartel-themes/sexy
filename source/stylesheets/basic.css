@@ -11,7 +11,7 @@
 body {
   background-color: {{ theme.background }};
 {% if theme.background_image != blank %}
-  background-image: url({{ theme.background_image.url }});
+  background-image: url("{{ theme.background_image.url }}");
   background-repeat: repeat;
 {% endif %}
   }

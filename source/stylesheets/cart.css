@@ -92,7 +92,7 @@
 #cart-body .item-options .remove-btn {
   width: 13px;
   height: 13px;
-  background: url({{ 'btn-delete.gif' | theme_image_url }}) no-repeat;
+  background: url("{{ 'btn-delete.gif' | theme_image_url }}") no-repeat;
   border: none;
   cursor: pointer;
   display: block;
@@ -120,7 +120,7 @@
   width: 85px;
   height: 18px;
   border: none;
-  background: url({{ 'btn-update.gif' | theme_image_url }}) no-repeat;
+  background: url("{{ 'btn-update.gif' | theme_image_url }}") no-repeat;
   cursor: pointer;
   }
 
@@ -188,7 +188,7 @@
   width: 66px;
   height: 18px;
   margin-left: 8px;
-  background: url({{ 'btn-checkout.gif' | theme_image_url }}) no-repeat;
+  background: url("{{ 'btn-checkout.gif' | theme_image_url }}") no-repeat;
   border: none;
   cursor: pointer;
   }
