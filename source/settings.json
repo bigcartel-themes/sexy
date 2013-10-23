@@ -130,14 +130,16 @@
     }
   ],
   "checkout": {
-    "optimize_legibility": "optimizeLegibility",
-    "antialias_text": "antialiased",
+    "optimize_legibility": false,
+    "antialias_text": false,
+    "wrapper_padding": "16px",
     "header_image": "{{ image }}",
     "background_image": "{{ background_image }}",
     "title_font": "{{ font }}",
     "title_vertical_padding": "5px",
     "title_color": "{{ links }}",
     "title_font_size": "24px",
+    "title_font_weight": "normal",
     "title_background_color": "transparent",
     "title_position": "left",
     "body_font": "{{ font }}",
