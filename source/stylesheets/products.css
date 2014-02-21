@@ -22,17 +22,18 @@
   }
 
 #products div.product-image {
+  display: table-cell;
   height: 175px;
+  width: 175px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
   }
 
 #products .product-img {
   height: auto;
-  width: auto;
   position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  width: auto;
   }
 
 #products .product-info {
