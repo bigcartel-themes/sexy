@@ -86,14 +86,12 @@
       {% if artists.active != blank %}
       <div id="artists" class="pod">
         <h3 class="artists-title"><span>Artists</span></h3>
-        <form id="artists-form" name="artists" action="/" method="get">
-          <select id="artists-select" name="artist" onchange="Store.selectArtist(this)">
-            <option value="">Select an artist...</option>
-            {% for artist in artists.active %}
-            <option value="{{ artist.url }}">{{ artist.name }}</option>
-            {% endfor %}
-          </select>
-        </form>
+        <select id="artists-select" name="artist" onchange="Store.selectArtist(this)">
+          <option value="">Select an artist...</option>
+          {% for artist in artists.active %}
+          <option value="{{ artist.url }}" {% if page.url == artist.url %} selected {% endif %}>{{ artist.name }}</option>
+          {% endfor %}
+        </select>
       </div>
       {% endif %}
 
