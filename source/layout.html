@@ -77,7 +77,8 @@
       {% if theme.show_search %}
       <div id="search" class="pod">
         <h3 class="search-title"><span>Search</span></h3>
-        <form id="search-form" name="search" action="/products" method="get">
+        <form id="search-form" name="search" action="/products" method="get" accept-charset="utf8">
+          <input type="hidden" name="utf8" value='✓'>
           <input id="search-input" name="search" type="text" /><button id="search-submit" name="search-submit" type="submit" title="GO"><span>GO</span></button>
         </form>
       </div>

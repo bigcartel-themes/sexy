@@ -1,7 +1,8 @@
 {% if cart.items != blank %}
 
 <div id="cart-content">
-  <form id="cart-form" method="post" action="/cart">
+  <form id="cart-form" method="post" action="/cart" accept-charset="utf8">
+    <input type="hidden" name="utf8" value='✓'>
     <table id="cart-table">
       <colgroup>
         <col id="col-item" />
