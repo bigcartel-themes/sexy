@@ -6,7 +6,7 @@
   {% for product in products %}
   <div id="product-{{ forloop.index }}" class="{{ product.css_class }}">
     <a href="{{ product.url }}" title="View {{ product.name | escape }}" class="product-a">
-      <img class="product-img" src="{{ product.image | product_image_url: "medium" }}" alt="Image of {{ product.name | escape }}" /><span class="stilt"></span>
+      <div class="product-image"><img class="product-img" src="{{ product.image | product_image_url: "medium" }}" alt="Image of {{ product.name | escape }}" /></div>
       <div class="product-info"><h3 class="product-title"><span>{{ product.name }}</span></h3><p class="product-price"><span>{{ product.default_price | money_with_sign }}</span></p>{% if product.on_sale %}<p class="product-status"><span>On Sale</span></p>{% endif %}</div>
     </a>
   </div>

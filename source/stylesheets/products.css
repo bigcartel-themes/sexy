@@ -21,22 +21,25 @@
   margin-bottom: 0;
   }
 
-#products .product-img {
-  display: inline;
-  float: none;
+#products div.product-image {
+  display: table-cell;
+  height: 175px;
+  width: 175px;
   vertical-align: middle;
+  text-align: center;
+  position: relative;
+  }
+
+#products .product-img {
+  height: auto;
+  position: relative;
+  width: auto;
   }
 
 #products .product-info {
-  float: left;
   width: 157px;
   padding: 5px 9px 11px 9px;
   border-top: 2px solid #fff;
-  }
-
-html #products .product-info {
-  width: 175px;
-  w\idth: 157px;
   }
 
 #products .product-title {
@@ -47,7 +50,6 @@ html #products .product-info {
   }
 
 #products .product-price {
-  float: left;
   font-size: 10px;
   margin-right: 8px;
   }
