@@ -21,7 +21,6 @@ var Store = {
   cartInputsID: '#cart-form input',
   cartFormID: 'cart-form',
   discountInputID: 'cart_discount_code',
-  artistsFormID: 'artists-form',
 
   initialize: function() {
     var owner = this;
@@ -63,15 +62,15 @@ var Store = {
     if(error instanceof Array) {
       error = error.join("</li><li>");
     }
-    
+
     error = "<li>" + error + "</li>";
-    
+
     if($(this.errorDiv)) {
       Element.update(this.errorDiv, '<ul>' + error + '</ul>');
     } else {
       new Insertion.Top('wrap', '<div class="' + this.errorDiv + '" id="' + this.errorDiv + '"><ul>' + error + '</ul></div>');
     }
-    
+
     Element.scrollTo(this.errorDiv);
   },
 
@@ -89,15 +88,12 @@ var Store = {
   },
 
   selectArtist: function(elm) {
-    var form = $(this.artistsFormID);
-        form.action = elm.value != '' ? elm.value : '/';
-        form.method = 'POST';
-        form.submit();
+    window.location.href = elm.value != '' ? elm.value : '/';
   },
 
   selectOption: function(index) {
     var options = $$(this.productOptionsList);
-    
+
     for(var a = 0; a < options.length; a++) {
       var option = options[a];
       if(a == index){option.addClassName('selected');}
